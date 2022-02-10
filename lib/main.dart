@@ -30,23 +30,30 @@ class _AppState extends State<App> {
         // Check for errors
         if (snapshot.hasError) {
           // Error screen
+          return Text('error', textDirection: TextDirection.ltr);
         }
 
         // Once complete, show your application
         if (snapshot.connectionState == ConnectionState.done) {
-          return StreamProvider(
-            create: (_) => FirestoreService().streamReport(),
-            catchError: (_, err) => Report(),
-            initialData: Report(),
-            child: MaterialApp(
-                debugShowCheckedModeBanner: true,
-                routes: appRoutes,
-                theme: appTheme),
-          );
+          return Text('app', textDirection: TextDirection.ltr);
         }
 
+        // if (snapshot.connectionState == ConnectionState.done) {
+        //   return StreamProvider(
+        //     create: (_) => FirestoreService().streamReport(),
+        //     catchError: (_, err) => Report(),
+        //     initialData: Report(),
+        //     child: MaterialApp(
+        //         debugShowCheckedModeBanner: true,
+        //         routes: appRoutes,
+        //         theme: appTheme),
+        //   );
+        // }
+
         // Otherwise, show something whilst waiting for initialization to complete
-        return const MaterialApp(home: LoadingScreen());
+        return Text('loading', textDirection: TextDirection.ltr);
+
+        // return const MaterialApp(home: LoadingScreen());
       },
     );
   }
