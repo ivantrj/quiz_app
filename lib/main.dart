@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:quiz_app/routes.dart';
+import 'package:quiz_app/theme.dart';
 // import 'package:provider/provider.dart';
 // import 'package:quizapp/services/services.dart';
 // import 'package:quizapp/shared/shared.dart';
@@ -37,6 +38,7 @@ class _AppState extends State<App> {
         if (snapshot.connectionState == ConnectionState.done) {
           return MaterialApp(
             routes: appRoutes,
+            theme: appTheme,
           );
         }
 
