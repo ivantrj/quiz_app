@@ -31,6 +31,12 @@ class LoginScreen extends StatelessWidget {
               loginMethod: AuthService().googleLogin,
               color: Colors.blue,
             ),
+            LoginButton(
+              icon: FontAwesomeIcons.apple,
+              text: 'Sign In with Apple',
+              loginMethod: AuthService().signInWithApple,
+              color: Colors.black,
+            ),
           ],
         ),
       ),
@@ -67,7 +73,7 @@ class LoginButton extends StatelessWidget {
           backgroundColor: color,
         ),
         onPressed: () => loginMethod(),
-        label: Text('Sign In Anonymously'),
+        label: Text(text, textAlign: TextAlign.center),
       ),
     );
   }
