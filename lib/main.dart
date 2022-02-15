@@ -4,11 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:quiz_app/routes.dart';
 import 'package:quiz_app/services/firestore.dart';
 import 'package:quiz_app/services/models.dart';
+import 'package:quiz_app/shared/loading.dart';
 import 'package:quiz_app/theme.dart';
-// import 'package:provider/provider.dart';
-// import 'package:quizapp/services/services.dart';
-// import 'package:quizapp/shared/shared.dart';
-// import 'package:quizapp/theme.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,7 +31,6 @@ class _AppState extends State<App> {
         // Check for errors
         if (snapshot.hasError) {
           // Error screen
-          return Text('error', textDirection: TextDirection.ltr);
         }
 
         // Once complete, show your application
@@ -51,9 +47,7 @@ class _AppState extends State<App> {
         }
 
         // Otherwise, show something whilst waiting for initialization to complete
-        return Text('loading', textDirection: TextDirection.ltr);
-
-        // return const MaterialApp(home: LoadingScreen());
+        return const MaterialApp(home: LoadingScreen());
       },
     );
   }
