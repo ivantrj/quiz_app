@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:quizapp/quiz/quiz.dart';
-import 'package:quizapp/services/models.dart';
+import 'package:quiz_app/quiz/quiz.dart';
+import 'package:quiz_app/services/models.dart';
 
 class TopicDrawer extends StatelessWidget {
   final List<Topic> topics;
